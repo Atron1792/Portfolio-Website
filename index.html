@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Abdullah — Computer Science Student</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Fixed Navigation -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="#home">
+        <img src="/assets/logo.png" alt="MA Logo" class="logo-image" />
+      </a>
+    </div>
+    <div class="nav-menu">
+      <a href="#about" data-number="01.">About</a>
+      <a href="#experience" data-number="02.">Experience</a>
+      <a href="#projects" data-number="03.">Projects</a>
+      <a href="#contact" data-number="04.">Contact</a>
+      <a href="/assets/resume.pdf" target="_blank" class="resume-link">Resume</a>
+    </div>
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="hero-greeting">Hi, my name is</p>
+        <h1 class="hero-name">Muhammad Abdullah.</h1>
+        <h2 class="hero-title">I build <span class="typewriter">websites</span>.</h2>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">01.</span>
+          <h2 class="section-title">About Me</h2>
+        </div>
+        
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Hello! I'm Abdullah, a Computer Science student at Mount Royal University in Calgary, AB. 
+              I started my journey in September 2022 and am expected to graduate in 2027. My passion lies 
+              in game development, algorithm design, and creating interactive experiences.
+            </p>
+            <p>
+              I have experience in both individual and team-based development, having participated in 
+              multiple hackathons and collaborative projects. My work ranges from 2D survival games 
+              to complex algorithmic implementations like Caesar Cipher encryption systems.
+            </p>
+            <p>
+              Currently, I'm working as a Retail Sales Associate at M&M Food Market, where I've developed 
+              strong customer service skills and learned to work effectively in team environments while 
+              managing multiple responsibilities.
+            </p>
+            <p>Here are the technologies I work with:</p>
+            <div class="tech-list">
+              <div class="tech-column">
+                <ul>
+                  <li>Python</li>
+                  <li>C & C++</li>
+                  <li>C#</li>
+                  <li>Java</li>
+                  <li>SQL</li>
+                </ul>
+              </div>
+              <div class="tech-column">
+                <ul>
+                  <li>Git & GitHub</li>
+                  <li>Godot Engine</li>
+                  <li>Visual Studio Code</li>
+                  <li>Terminal/CLI</li>
+                  <li>Game Development</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about-image">
+            <div class="image-wrapper">
+              <img src="/assets/profile_pic.jpg" alt="Muhammad Abdullah" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">02.</span>
+          <h2 class="section-title">Where I've Worked</h2>
+        </div>
+        
+        <div class="experience-content">
+          <div class="experience-tabs">
+            <button class="tab-button active" data-tab="mm">M&M Food Market</button>
+          </div>
+          
+          <div class="experience-panels">
+            <div class="tab-panel active" id="mm">
+              <h3>Retail Sales Associate <span class="company">@ M&M Food Market</span></h3>
+              <p class="job-range">February 2021 - Present</p>
+              <ul>
+                <li>Ensure high levels of customer satisfaction by consistently providing friendly and professional assistance to diverse clientele</li>
+                <li>Address customer complaints and inquiries, proposing solutions aligned with company policy to maintain customer satisfaction and loyalty</li>
+                <li>Collaborate and coordinate with co-workers to manage responsibilities efficiently and achieve optimal results in fast-paced retail environment</li>
+                <li>Maintain accurate inventory tracking and product knowledge to provide informed recommendations to customers</li>
+                <li>Handle cash transactions and operate POS systems with attention to detail and accuracy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">03.</span>
+          <h2 class="section-title">Some Things I've Built</h2>
+        </div>
+        
+        <div class="projects-grid">
+          <div class="project featured">
+            <div class="project-content">
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">Winter Express</h3>
+              <div class="project-description">
+                <p>
+                  A strategic management game that fosters critical thinking by challenging players to optimize 
+                  resource allocation and strategic decision-making. Features a dynamic resource management system 
+                  that interacts with various game mechanics, enhancing strategic depth and player engagement. 
+                  Developed during a 24-hour hackathon while contributing to project design and coding aspects.
+                </p>
+              </div>
+              <ul class="project-tech-list">
+                <li>Godot</li>
+                <li>GDScript</li>
+                <li>Game Development</li>
+                <li>Team Leadership</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" target="_blank" aria-label="GitHub Link">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-image">
+              <a href="#" target="_blank">
+                <img src="/assets/logo.png" alt="Winter Express Game" />
+              </a>
+            </div>
+          </div>
+
+          <div class="project featured">
+            <div class="project-content">
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">Caesar Cipher</h3>
+              <div class="project-description">
+                <p>
+                  A robust Caesar Cipher algorithm implementation in Python showcasing strong problem-solving 
+                  and coding abilities. Demonstrates proficiency in modular programming by creating 
+                  well-structured and reusable code components. Includes comprehensive error handling 
+                  mechanisms to ensure graceful handling of unexpected inputs or errors.
+                </p>
+              </div>
+              <ul class="project-tech-list">
+                <li>Python</li>
+                <li>Cryptography</li>
+                <li>Algorithm Design</li>
+                <li>Error Handling</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" target="_blank" aria-label="GitHub Link">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-image">
+              <a href="#" target="_blank">
+                <img src="/assets/logo.png" alt="Caesar Cipher" />
+              </a>
+            </div>
+          </div>
+
+          <div class="project featured">
+            <div class="project-content">
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">LimboTD</h3>
+              <div class="project-description">
+                <p>
+                  A 2D survival tower defense game that won 2nd place in a 24-hour hackathon. Showcased 
+                  proficiency in rapid prototyping and time management while contributing effectively to 
+                  team-based game development. Demonstrated strong learning ability through using the Godot 
+                  game engine to create and implement engaging game mechanics.
+                </p>
+              </div>
+              <ul class="project-tech-list">
+                <li>Godot</li>
+                <li>GDScript</li>
+                <li>Game Design</li>
+                <li>Team Collaboration</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" target="_blank" aria-label="GitHub Link">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-image">
+              <a href="#" target="_blank">
+                <img src="/assets/logo.png" alt="LimboTD Game" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">04.</span>
+          <h2 class="section-title">Get In Touch</h2>
+        </div>
+        
+        <div class="contact-content">
+          <p>
+            I'm currently studying Computer Science at Mount Royal University and am passionate about 
+            game development and software engineering. Whether you have an internship opportunity, 
+            want to collaborate on a project, or just want to connect, I'd love to hear from you!
+          </p>
+          <div class="contact-social">
+            <a href="https://linkedin.com/in/mabdullah2003" target="_blank" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://github.com/Atron1792" target="_blank" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Designed & Built by Muhammad Abdullah</p>
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

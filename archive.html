@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archive - Muhammad Abdullah</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .archive-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 150px 25px 100px;
+    }
+    
+    .archive-header {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+    
+    .archive-title {
+      font-size: clamp(40px, 8vw, 80px);
+      margin: 0 0 20px;
+      color: var(--lightest-slate);
+    }
+    
+    .archive-subtitle {
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: var(--fz-md);
+      font-weight: 400;
+    }
+    
+    .archive-table {
+      width: 100%;
+      border-collapse: collapse;
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .archive-table thead th {
+      padding: 10px;
+      text-align: left;
+      color: var(--lightest-slate);
+      font-size: var(--fz-sm);
+      font-weight: 600;
+    }
+    
+    .archive-table tbody tr {
+      border-bottom: 1px solid var(--lightest-navy);
+      transition: var(--transition);
+    }
+    
+    .archive-table tbody tr:hover {
+      background-color: var(--lightest-navy);
+    }
+    
+    .archive-table tbody td {
+      padding: 15px 10px;
+      font-size: var(--fz-sm);
+      vertical-align: top;
+    }
+    
+    .project-year {
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
+    }
+    
+    .project-title {
+      color: var(--lightest-slate);
+      font-size: var(--fz-lg);
+      font-weight: 600;
+    }
+    
+    .project-company {
+      color: var(--light-slate);
+      font-size: var(--fz-xs);
+    }
+    
+    .project-tech {
+      color: var(--light-slate);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xxs);
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    .project-links a {
+      color: var(--light-slate);
+      transition: var(--transition);
+    }
+    
+    .project-links a:hover {
+      color: var(--green);
+    }
+    
+    .project-links svg {
+      width: 16px;
+      height: 16px;
+    }
+    
+    @media (max-width: 768px) {
+      .archive-table {
+        font-size: var(--fz-sm);
+      }
+      
+      .archive-table thead {
+        display: none;
+      }
+      
+      .archive-table tbody tr {
+        display: block;
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid var(--lightest-navy);
+        border-radius: var(--border-radius);
+      }
+      
+      .archive-table tbody td {
+        display: block;
+        padding: 5px 0;
+        border: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="/">
+        <img src="/attached_assets/logo.png" alt="MA Logo" class="logo-image" />
+      </a>
+    </div>
+    <div class="nav-menu">
+      <a href="/#about" data-number="01.">About</a>
+      <a href="/#experience" data-number="02.">Experience</a>
+      <a href="/#projects" data-number="03.">Projects</a>
+      <a href="/#contact" data-number="04.">Contact</a>
+      <a href="archive.html" data-number="05.">Archive</a>
+      <a href="/attached_assets/resume.pdf" target="_blank" class="resume-link">Resume</a>
+    </div>
+  </nav>
+  
+  <main>
+    <div class="archive-container">
+      <header class="archive-header">
+        <h1 class="archive-title">Archive</h1>
+        <p class="archive-subtitle">A list of what I've made</p>
+      </header>
+      
+      <table class="archive-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Made for</th>
+            <th>Built with</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody id="archive-projects">
+          <!-- Projects will be inserted here -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+  
+  <script>
+    // Default projects data
+    const defaultProjects = {
+      featured: [
+        {
+          id: 'winter-express',
+          title: 'Winter Express',
+          description: 'A strategic management game that fosters critical thinking by challenging players to optimize resource allocation and strategic decision-making.',
+          tech: ['Godot', 'GDScript', 'Game Development', 'Team Leadership'],
+          github: 'https://github.com/Atron1792/winter-express',
+          external: 'https://itch.io/jam/gmtk-game-jam-2024',
+          year: 2024,
+          type: 'featured',
+          company: 'Game Jam'
+        },
+        {
+          id: 'caesar-cipher',
+          title: 'Caesar Cipher',
+          description: 'A robust Caesar Cipher algorithm implementation in Python showcasing strong problem-solving and coding abilities.',
+          tech: ['Python', 'Cryptography', 'Algorithm Design', 'Error Handling'],
+          year: 2023,
+          type: 'featured',
+          company: 'Academic Project'
+        },
+        {
+          id: 'limbo-td',
+          title: 'LimboTD',
+          description: 'A 2D survival tower defense game that won 2nd place in a 24-hour hackathon.',
+          tech: ['Godot', 'GDScript', 'Game Design', 'Team Collaboration'],
+          github: 'https://github.com/Atron1792/LimboLTD_CalgaryHacks2024',
+          external: 'https://itch.io/jam/brackeys-12',
+          year: 2024,
+          type: 'featured',
+          company: 'Hackathon Project'
+        }
+      ],
+      archive: [
+        {
+          id: 'wolflings-pack',
+          title: 'Wolflings: Peril of the Pack',
+          description: 'A survival adventure game where players control a pack of wolves navigating through dangerous territories.',
+          tech: ['Godot', 'GDScript', 'Game Design'],
+          github: 'https://github.com/Atron1792/wolflings',
+          external: 'https://itch.io/jam/brackeys-11',
+          year: 2024,
+          type: 'game',
+          company: 'Game Jam'
+        },
+        {
+          id: 'change-to-scale',
+          title: 'Change to Scale',
+          description: 'A puzzle platformer game made for GMTK Game Jam 2024 with scaling mechanics.',
+          tech: ['Godot', 'GDScript', 'Platformer'],
+          github: 'https://github.com/Atron1792/change-to-scale',
+          external: 'https://itch.io/jam/gmtk-game-jam-2024',
+          year: 2024,
+          type: 'game',
+          company: 'Game Jam'
+        },
+        {
+          id: 'combat-harvest',
+          title: 'Combat Harvest',
+          description: 'An action-packed harvesting game combining combat mechanics with resource management.',
+          tech: ['Godot', 'GDScript', 'Action'],
+          github: 'https://github.com/Atron1792/combat-harvest',
+          year: 2024,
+          type: 'game',
+          company: 'Personal Project'
+        }
+      ]
+    };
+    
+    // Load and display archive projects
+    const projects = JSON.parse(localStorage.getItem('portfolio-projects') || JSON.stringify(defaultProjects));
+    const allProjects = [...(projects.featured || []), ...(projects.archive || [])];
+    
+    const tbody = document.getElementById('archive-projects');
+    
+    allProjects
+      .sort((a, b) => b.year - a.year)
+      .forEach(project => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td class="project-year">${project.year}</td>
+          <td>
+            <div class="project-title">${project.title}</div>
+          </td>
+          <td class="project-company">${project.company || 'Personal Project'}</td>
+          <td class="project-tech">${project.tech ? project.tech.join(' • ') : ''}</td>
+          <td>
+            <div class="project-links">
+              ${project.github ? `
+                <a href="${project.github}" target="_blank" aria-label="GitHub">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              ` : ''}
+              ${project.external ? `
+                <a href="${project.external}" target="_blank" aria-label="External Link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              ` : ''}
+            </div>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+  </script>
+</body>
+</html>

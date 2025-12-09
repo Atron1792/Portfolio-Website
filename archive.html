@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,8 +34,6 @@
     .archive-table {
       width: 100%;
       border-collapse: collapse;
-      visibility: visible;
-      opacity: 1;
     }
     
     .archive-table thead th {
@@ -106,10 +103,6 @@
     }
     
     @media (max-width: 768px) {
-      .archive-table {
-        font-size: var(--fz-sm);
-      }
-      
       .archive-table thead {
         display: none;
       }
@@ -164,113 +157,79 @@
           </tr>
         </thead>
         <tbody id="archive-projects">
-          <!-- Projects will be inserted here -->
         </tbody>
       </table>
     </div>
   </main>
   
   <script>
-    // Default projects data
-    const defaultProjects = {
-      featured: [
-        {
-          id: 'aom-ck3',
-          title: 'Artifact of Myth, a CK3 Mod',
-          desc: 'A comprehensive mod for Crusader Kings III that introduces new artifacts and events inspired by mythology.',
-          tech: ['Jomini Script', 'Steam Workshop'],
-          github: 'https://github.com/Atron1792/AoM-CK3-Mod',
-          external: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3481270592',
-          year: 2025,
-          type: 'featured',
-          company: 'Personal Project'
-        },
-        {
-          id: 'caesar-cipher',
-          title: 'Caesar Cipher',
-          desc: 'A robust Caesar Cipher algorithm implementation in Python showcasing strong problem-solving and coding abilities.',
-          tech: ['Python', 'Cryptography', 'Algorithm Design', 'Error Handling'],
-          year: 2023,
-          type: 'featured',
-          company: 'Academic Project'
-        },
-        {
-          id: 'limbo-td',
-          title: 'LimboTD',
-          desc: 'A 2D survival tower defense game that won 2nd place in a 24-hour hackathon.',
-          tech: ['Godot', 'GDScript', 'Game Design', 'Team Collaboration'],
-          github: 'https://github.com/Atron1792/LimboLTD_CalgaryHacks2024',
-          external: 'https://mrugddc.itch.io/limbo-ltd',
-          year: 2024,
-          type: 'featured',
-          company: 'CalgaryHacks 2024'
-        }
-      ],
-      archive: [
-        {
-          id: 'wolflings-pack',
-          title: 'Wolflings: Peril of the Pack',
-          desc: 'A survival adventure game where players control a pack of wolves navigating through dangerous territories.',
-          tech: ['Godot', 'GDScript', 'Game Design'],
-          github: 'https://github.com/TechPowerAwaits/calgaryhacks-2025',
-          external: 'https://atron1792.itch.io/wolflings-peril-of-the-pack',
-          year: 2025,
-          type: 'game',
-          company: 'CalgaryHacks 2025'
-        },
-        {
-          id: 'change-to-scale',
-          title: 'Change to Scale',
-          desc: 'A puzzle platformer game made for GMTK Game Jam 2024 with scaling mechanics.',
-          tech: ['Godot', 'GDScript', 'Platformer'],
-          github: 'https://github.com/Atron1792/Change-to-Scale_GMTK-2024',
-          external: 'https://atron1792.itch.io/change-to-scale',
-          year: 2024,
-          type: 'game',
-          company: 'GMTK Game Jam 2024'
-        },
-        {
-          id: 'combat-harvest',
-          title: 'Combat Harvest',
-          desc: 'An action-packed harvesting game combining combat mechanics with resource management.',
-          tech: ['Godot', 'GDScript', 'Action'],
-          github: 'https://github.com/Atron1792/combat-harvest',
-          external: 'https://karszo.itch.io/combat-harvest',
-          year: 2024,
-          type: 'game',
-          company: 'Propel Alberta Game Jam'
-        },
-        {
-          id: 'winter-express',
-          title: 'Winter Express',
-          desc: 'A strategic management game that fosters critical thinking by challenging players to optimize resource allocation and strategic decision-making.',
-          tech: ['Godot', 'GDScript', 'Game Development', 'Team Leadership'],
-          github: 'https://github.com/Atron1792/winter-express',
-          external: 'https://atron1792.itch.io/winter-express',
-          year: 2024,
-          type: 'game',
-          company: 'MRUHacks 2024'
-        },
-        {
-          id: 'website',
-          title: 'Portfolio Website',
-          desc: 'My personal portfolio website to showcase my projects and skills.',
-          tech: ['HTML', 'CSS', 'JavaScript'],
-          github: 'https://github.com/Atron1792/Portfolio-Website',
-          year: 2025,
-          type: 'website',
-          company: 'Personal Project'
-        }
-      ]
-    };
-    
-    // Load and display archive projects
-    const projects = JSON.parse(localStorage.getItem('portfolio-projects') || JSON.stringify(defaultProjects));
-    const allProjects = [...(projects.featured || []), ...(projects.archive || [])];
+    const projects = [
+      {
+        title: 'Artifact of Myth, a CK3 Mod',
+        tech: ['Jomini Script', 'Steam Workshop'],
+        github: 'https://github.com/Atron1792/AoM-CK3-Mod',
+        external: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3481270592',
+        year: 2025,
+        company: 'Personal Project'
+      },
+      {
+        title: 'Wolflings: Peril of the Pack',
+        tech: ['Godot', 'GDScript', 'Game Design'],
+        github: 'https://github.com/TechPowerAwaits/calgaryhacks-2025',
+        external: 'https://atron1792.itch.io/wolflings-peril-of-the-pack',
+        year: 2025,
+        company: 'CalgaryHacks 2025'
+      },
+      {
+        title: 'Portfolio Website',
+        tech: ['HTML', 'CSS', 'JavaScript'],
+        github: 'https://github.com/Atron1792/Portfolio-Website',
+        year: 2025,
+        company: 'Personal Project'
+      },
+      {
+        title: 'LimboTD',
+        tech: ['Godot', 'GDScript', 'Game Design', 'Team Collaboration'],
+        github: 'https://github.com/Atron1792/LimboLTD_CalgaryHacks2024',
+        external: 'https://mrugddc.itch.io/limbo-ltd',
+        year: 2024,
+        company: 'CalgaryHacks 2024'
+      },
+      {
+        title: 'Change to Scale',
+        tech: ['Godot', 'GDScript', 'Platformer'],
+        github: 'https://github.com/Atron1792/Change-to-Scale_GMTK-2024',
+        external: 'https://atron1792.itch.io/change-to-scale',
+        year: 2024,
+        company: 'GMTK Game Jam 2024'
+      },
+      {
+        title: 'Combat Harvest',
+        tech: ['Godot', 'GDScript', 'Action'],
+        github: 'https://github.com/Atron1792/combat-harvest',
+        external: 'https://karszo.itch.io/combat-harvest',
+        year: 2024,
+        company: 'Propel Alberta Game Jam'
+      },
+      {
+        title: 'Winter Express',
+        tech: ['Godot', 'GDScript', 'Game Development', 'Team Leadership'],
+        github: 'https://github.com/Atron1792/winter-express',
+        external: 'https://atron1792.itch.io/winter-express',
+        year: 2024,
+        company: 'MRUHacks 2024'
+      },
+      {
+        title: 'Caesar Cipher',
+        tech: ['Python', 'Cryptography', 'Algorithm Design', 'Error Handling'],
+        year: 2023,
+        company: 'Academic Project'
+      }
+    ];
     
     const tbody = document.getElementById('archive-projects');
     
-    allProjects
+    projects
       .sort((a, b) => b.year - a.year)
       .forEach(project => {
         const row = document.createElement('tr');
@@ -279,7 +238,7 @@
           <td>
             <div class="project-title">${project.title}</div>
           </td>
-          <td class="project-company">${project.company || 'Personal Project'}</td>
+          <td class="project-company">${project.company}</td>
           <td class="project-tech">${project.tech ? project.tech.join(' • ') : ''}</td>
           <td>
             <div class="project-links">

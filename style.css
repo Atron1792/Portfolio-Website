@@ -1,4 +1,3 @@
-
 /* Custom Properties */
 :root {
   --navy: #0a192f;
@@ -31,18 +30,8 @@
   --nav-height: 100px;
   --nav-scroll-height: 70px;
 
-  --tab-height: 42px;
-  --tab-width: 120px;
-
   --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-  --hamburger-width: 30px;
-
-  --ham-before: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
-  --ham-before-active: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
-  --ham-after: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  --ham-after-active: bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
 }
 
 /* Reset and Base Styles */
@@ -287,36 +276,6 @@ main {
   50% { border-right-color: transparent; }
 }
 
-.hero-description {
-  margin: 20px 0 0;
-  max-width: 540px;
-  color: var(--slate);
-  font-size: var(--fz-xl);
-}
-
-.cta-button {
-  color: var(--green);
-  background-color: transparent;
-  border: 1px solid var(--green);
-  border-radius: var(--border-radius);
-  padding: 1.25rem 1.75rem;
-  font-size: var(--fz-sm);
-  font-family: var(--font-mono);
-  line-height: 1;
-  text-decoration: none;
-  cursor: pointer;
-  transition: var(--transition);
-  margin-top: 50px;
-  display: inline-block;
-}
-
-.cta-button:hover,
-.cta-button:focus,
-.cta-button:active {
-  background-color: var(--green-tint);
-  outline: none;
-}
-
 /* Section Styles */
 section {
   margin: 0 auto;
@@ -501,116 +460,6 @@ section {
 .image-wrapper:hover img {
   filter: none;
   mix-blend-mode: normal;
-}
-
-/* Experience Section */
-.experience-content {
-  max-width: 700px;
-}
-
-.experience-tabs {
-  position: relative;
-  z-index: 3;
-  width: max-content;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-}
-
-.tab-button {
-  text-decoration: none;
-  text-decoration-skip-ink: auto;
-  position: relative;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: var(--tab-height);
-  padding: 0 20px 2px;
-  border: none;
-  border-left: 2px solid var(--lightest-navy);
-  background-color: transparent;
-  color: var(--slate);
-  font-family: var(--font-mono);
-  font-size: var(--fz-xs);
-  text-align: left;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.tab-button:hover,
-.tab-button:active,
-.tab-button:focus {
-  color: var(--green);
-  outline: 0;
-  border-left-color: var(--green);
-  background-color: var(--light-navy);
-}
-
-.tab-button.active {
-  color: var(--green);
-  border-left-color: var(--green);
-}
-
-.experience-panels {
-  position: relative;
-  width: 100%;
-  margin-left: 20px;
-}
-
-.tab-panel {
-  width: 100%;
-  height: auto;
-  padding: 10px 5px;
-  display: none;
-}
-
-.tab-panel.active {
-  display: block;
-}
-
-.tab-panel h3 {
-  margin-bottom: 2px;
-  font-size: var(--fz-xxl);
-  font-weight: 500;
-  line-height: 1.3;
-  color: var(--lightest-slate);
-}
-
-.tab-panel .company {
-  color: var(--green);
-}
-
-.job-range {
-  margin-bottom: 25px;
-  color: var(--light-slate);
-  font-family: var(--font-mono);
-  font-size: var(--fz-xs);
-}
-
-.tab-panel ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  font-size: var(--fz-lg);
-}
-
-.tab-panel li {
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 10px;
-  color: var(--slate);
-}
-
-.tab-panel li::before {
-  content: '▹';
-  position: absolute;
-  left: 0;
-  color: var(--green);
-  font-size: var(--fz-sm);
-  line-height: 18px;
 }
 
 /* Projects Section */
@@ -822,35 +671,11 @@ section {
   display: none;
 }
 
-
-
 .contact-content p {
   color: var(--slate);
   margin: 0 0 50px;
   max-width: 540px;
   font-size: var(--fz-lg);
-}
-
-.contact-button {
-  color: var(--green);
-  background-color: transparent;
-  border: 1px solid var(--green);
-  border-radius: var(--border-radius);
-  padding: 1.25rem 1.75rem;
-  font-size: var(--fz-sm);
-  font-family: var(--font-mono);
-  line-height: 1;
-  text-decoration: none;
-  cursor: pointer;
-  transition: var(--transition);
-  display: inline-block;
-}
-
-.contact-button:hover,
-.contact-button:focus,
-.contact-button:active {
-  background-color: var(--green-tint);
-  outline: none;
 }
 
 .contact-social {
@@ -1015,10 +840,6 @@ section {
   .hero-title {
     font-size: clamp(35px, 8vw, 65px);
   }
-  
-  .hero-description {
-    font-size: var(--fz-lg);
-  }
 
   .about-content {
     display: block;
@@ -1033,32 +854,6 @@ section {
   .tech-list {
     grid-template-columns: 1fr 1fr;
     gap: 0px 20px;
-  }
-
-  .experience-tabs {
-    display: flex;
-    overflow-x: auto;
-    width: calc(100% + 80px);
-    padding-left: 40px;
-    margin-left: -40px;
-    margin-bottom: 30px;
-    flex-direction: row;
-  }
-
-  .tab-button {
-    border-left: 0;
-    border-bottom: 2px solid var(--lightest-navy);
-    min-width: 120px;
-    padding: 0 15px 2px;
-    height: var(--tab-height);
-  }
-
-  .tab-button.active {
-    border-bottom-color: var(--green);
-  }
-
-  .experience-panels {
-    margin-left: 0;
   }
 
   .project {
@@ -1145,16 +940,6 @@ section {
     margin: 0 0 20px 2px;
   }
   
-  .hero-description {
-    font-size: var(--fz-md);
-    max-width: 100%;
-  }
-  
-  .cta-button {
-    padding: 1rem 1.5rem;
-    margin-top: 40px;
-  }
-  
   section {
     padding: 80px 0;
   }
@@ -1172,18 +957,6 @@ section {
     gap: 5px;
   }
   
-  .experience-tabs {
-    width: calc(100% + 50px);
-    padding-left: 25px;
-    margin-left: -25px;
-  }
-  
-  .tab-button {
-    min-width: 100px;
-    padding: 0 10px 2px;
-    font-size: var(--fz-xxs);
-  }
-  
   .project {
     padding: 1.5rem 1rem;
     margin-bottom: 40px;
@@ -1196,11 +969,6 @@ section {
   .project-tech-list li {
     margin: 0 15px 8px 0;
     font-size: var(--fz-xxs);
-  }
-  
-  .contact-button {
-    padding: 1rem 1.25rem;
-    font-size: var(--fz-xs);
   }
   
   .contact-social {
@@ -1227,15 +995,6 @@ section {
     font-size: clamp(28px, 10vw, 50px);
   }
   
-  .hero-description {
-    font-size: var(--fz-sm);
-  }
-  
-  .cta-button {
-    padding: 0.875rem 1rem;
-    font-size: var(--fz-xxs);
-  }
-  
   section {
     padding: 60px 0;
   }
@@ -1260,14 +1019,6 @@ section {
   .tech-column li {
     font-size: var(--fz-xxs);
     margin-bottom: 8px;
-  }
-  
-  .tab-panel h3 {
-    font-size: var(--fz-xl);
-  }
-  
-  .tab-panel ul {
-    font-size: var(--fz-md);
   }
   
   .project-title {
@@ -1305,16 +1056,5 @@ section {
   
   .project {
     padding: 1rem 0.75rem;
-  }
-  
-  .experience-tabs {
-    width: calc(100% + 20px);
-    padding-left: 10px;
-    margin-left: -10px;
-  }
-  
-  .tab-button {
-    min-width: 80px;
-    padding: 0 8px 2px;
   }
 }

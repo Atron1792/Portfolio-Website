@@ -6,6 +6,122 @@
   <title>Archive - Muhammad Abdullah</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .archive-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 150px 25px 100px;
+    }
+    
+    .archive-header {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+    
+    .archive-title {
+      font-size: clamp(40px, 8vw, 80px);
+      margin: 0 0 20px;
+      color: var(--lightest-slate);
+    }
+    
+    .archive-subtitle {
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: var(--fz-md);
+      font-weight: 400;
+    }
+    
+    .archive-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .archive-table thead th {
+      padding: 10px;
+      text-align: left;
+      color: var(--lightest-slate);
+      font-size: var(--fz-sm);
+      font-weight: 600;
+    }
+    
+    .archive-table tbody tr {
+      border-bottom: 1px solid var(--lightest-navy);
+      transition: var(--transition);
+    }
+    
+    .archive-table tbody tr:hover {
+      background-color: var(--lightest-navy);
+    }
+    
+    .archive-table tbody td {
+      padding: 15px 10px;
+      font-size: var(--fz-sm);
+      vertical-align: top;
+    }
+    
+    .project-year {
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
+    }
+    
+    .project-title {
+      color: var(--lightest-slate);
+      font-size: var(--fz-lg);
+      font-weight: 600;
+    }
+    
+    .project-company {
+      color: var(--light-slate);
+      font-size: var(--fz-xs);
+    }
+    
+    .project-tech {
+      color: var(--light-slate);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xxs);
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    .project-links a {
+      color: var(--light-slate);
+      transition: var(--transition);
+    }
+    
+    .project-links a:hover {
+      color: var(--green);
+    }
+    
+    .project-links svg {
+      width: 16px;
+      height: 16px;
+    }
+    
+    @media (max-width: 768px) {
+      .archive-table thead {
+        display: none;
+      }
+      
+      .archive-table tbody tr {
+        display: block;
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid var(--lightest-navy);
+        border-radius: var(--border-radius);
+      }
+      
+      .archive-table tbody td {
+        display: block;
+        padding: 5px 0;
+        border: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar">
@@ -132,7 +248,7 @@
           <td class="project-company">${project.company}</td>
           <td class="project-tech">${project.tech ? project.tech.join(' • ') : ''}</td>
           <td>
-            <div class="archive-project-links">
+            <div class="project-links">
               ${project.github ? `
                 <a href="${project.github}" target="_blank" aria-label="GitHub">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

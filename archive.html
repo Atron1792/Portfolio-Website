@@ -6,139 +6,21 @@
   <title>Archive - Muhammad Abdullah</title>
   <link href="style.css?v=20260623" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    .archive-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 150px 25px 100px;
-    }
-    
-    .archive-header {
-      text-align: center;
-      margin-bottom: 100px;
-    }
-    
-    .archive-title {
-      font-size: clamp(40px, 8vw, 80px);
-      margin: 0 0 20px;
-      color: var(--lightest-slate);
-    }
-    
-    .archive-subtitle {
-      color: var(--green);
-      font-family: var(--font-mono);
-      font-size: var(--fz-md);
-      font-weight: 400;
-    }
-    
-    .archive-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    
-    .archive-table thead th {
-      padding: 10px;
-      text-align: left;
-      color: var(--lightest-slate);
-      font-size: var(--fz-sm);
-      font-weight: 600;
-    }
-    
-    .archive-table tbody tr {
-      border-bottom: 1px solid var(--lightest-navy);
-      transition: var(--transition);
-    }
-    
-    .archive-table tbody tr:hover {
-      background-color: var(--lightest-navy);
-    }
-    
-    .archive-table tbody td {
-      padding: 15px 10px;
-      font-size: var(--fz-sm);
-      vertical-align: top;
-    }
-    
-    .project-year {
-      color: var(--green);
-      font-family: var(--font-mono);
-      font-size: var(--fz-xs);
-    }
-    
-    .project-title {
-      color: var(--lightest-slate);
-      font-size: var(--fz-lg);
-      font-weight: 600;
-    }
-    
-    .project-company {
-      color: var(--light-slate);
-      font-size: var(--fz-xs);
-    }
-    
-    .project-tech {
-      color: var(--light-slate);
-      font-family: var(--font-mono);
-      font-size: var(--fz-xxs);
-    }
-    
-    .project-links {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    
-    .project-links a {
-      color: var(--light-slate);
-      transition: var(--transition);
-    }
-    
-    .project-links a:hover {
-      color: var(--green);
-    }
-    
-    .project-links svg {
-      width: 16px;
-      height: 16px;
-    }
-    
-    @media (max-width: 768px) {
-      .archive-table thead {
-        display: none;
-      }
-      
-      .archive-table tbody tr {
-        display: block;
-        margin-bottom: 30px;
-        padding: 20px;
-        border: 1px solid var(--lightest-navy);
-        border-radius: var(--border-radius);
-      }
-      
-      .archive-table tbody td {
-        display: block;
-        padding: 5px 0;
-        border: none;
-      }
-    }
-  </style>
 </head>
 
-<body>
+<body class="archive-page">
   <!-- Fixed Navigation -->
   <nav class="navbar">
     <div class="nav-logo">
-      <a href="./">
+      <a href="/">
         <img src="/assets/logo.png" alt="MA Logo" class="logo-image" width="512" height="512" />
       </a>
     </div>
     <div class="nav-menu">
-      <a href="./#about" data-number="01.">About</a>
-      <a href="./#experience" data-number="02.">Experience</a>
-      <a href="./#projects" data-number="03.">Projects</a>
-      <a href="./#contact" data-number="04.">Contact</a>
-      <a href="archive.html" data-number="05.">Archive</a>
+      <a href="/#about" data-number="01.">About</a>
+      <a href="/#projects" data-number="02.">Projects</a>
+      <a href="/#contact" data-number="03.">Contact</a>
+      <a href="archive.html" data-number="04.">Archive</a>
       <a href="/assets/resume.pdf" target="_blank" class="resume-link">Resume</a>
     </div>
     <div class="nav-toggle">
@@ -151,7 +33,7 @@
   <main>
     <div class="archive-container">
       <header class="archive-header">
-        <h1 class="archive-title">Archive</h1>
+        <h1 class="archive-title u-title-xl">Archive</h1>
         <p class="archive-subtitle">A list of what I've made</p>
       </header>
       
@@ -180,7 +62,6 @@
           title: 'Artifact of Myth, a CK3 Mod',
           description: '',
           tech: ['Jomini Script', 'Steam Workshop'],
-          github: 'https://github.com/Atron1792/AoM_CK3_Mod',
           external: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3481270592',
           year: 2025,
           type: 'featured',
@@ -253,6 +134,15 @@
           company: 'MRUHacks 2024'
         },
         {
+          id: 'website',
+          title: 'Portfolio Website',
+          description: 'My personal portfolio website to showcase my projects and skills.',
+          tech: ['HTML', 'CSS', 'JavaScript'],
+          year: 2025,
+          type: 'website',
+          company: 'Personal Project'
+        },
+        {
           id: 'winfolderlock',
           title: 'WinFolderLock',
           description: 'A UI based folder locking system for Windows 10/11.',
@@ -276,14 +166,14 @@
       .forEach(project => {
         const row = document.createElement('tr');
         row.innerHTML = `
-          <td class="project-year">${project.year}</td>
+          <td class="project-year u-mono u-meta-sm">${project.year}</td>
           <td>
             <div class="project-title">${project.title}</div>
           </td>
           <td class="project-company">${project.company}</td>
-          <td class="project-tech">${project.tech ? project.tech.join(' • ') : ''}</td>
+          <td class="project-tech u-mono u-meta-xs">${project.tech ? project.tech.join(' • ') : ''}</td>
           <td>
-            <div class="project-links">
+            <div class="project-links u-icon-links">
               ${project.github ? `
                 <a href="${project.github}" target="_blank" aria-label="GitHub">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

@@ -1,26 +1,17 @@
 // Navigation scroll effect
 window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
   const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 100) {
+  if (scrollY > 100) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
-});
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const offsetTop = target.offsetTop - 100;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
-  });
+  const hero = document.querySelector('.hero');
+  if (hero && window.innerWidth > 768) {
+    hero.style.transform = `translateY(${scrollY * 0.1}px)`;
+  }
 });
 
 // Enhanced typewriter effect
@@ -166,27 +157,3 @@ if (navToggle && navMenu) {
   });
 }
 
-// Add loading animation for page
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
-
-// Parallax effect for hero section (subtle)
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  const hero = document.querySelector('.hero');
-  if (hero && window.innerWidth > 768) {
-    hero.style.transform = `translateY(${scrolled * 0.1}px)`;
-  }
-});
-
-// Keyboard navigation support
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Tab') {
-    document.body.classList.add('using-keyboard');
-  }
-});
-
-document.addEventListener('mousedown', () => {
-  document.body.classList.remove('using-keyboard');
-});

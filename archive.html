@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,8 +35,6 @@
     .archive-table {
       width: 100%;
       border-collapse: collapse;
-      visibility: visible;
-      opacity: 1;
     }
     
     .archive-table thead th {
@@ -107,10 +104,6 @@
     }
     
     @media (max-width: 768px) {
-      .archive-table {
-        font-size: var(--fz-sm);
-      }
-      
       .archive-table thead {
         display: none;
       }
@@ -173,7 +166,6 @@
           </tr>
         </thead>
         <tbody id="archive-projects">
-          <!-- Projects will be inserted here -->
         </tbody>
       </table>
     </div>
@@ -279,7 +271,7 @@
     
     const tbody = document.getElementById('archive-projects');
     
-    allProjects
+    projects
       .sort((a, b) => b.year - a.year)
       .forEach(project => {
         const row = document.createElement('tr');
@@ -288,7 +280,7 @@
           <td>
             <div class="project-title">${project.title}</div>
           </td>
-          <td class="project-company">${project.company || 'Personal Project'}</td>
+          <td class="project-company">${project.company}</td>
           <td class="project-tech">${project.tech ? project.tech.join(' • ') : ''}</td>
           <td>
             <div class="project-links">

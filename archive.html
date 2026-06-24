@@ -266,12 +266,12 @@
     };
     
     // Load and display archive projects
-    const projects = JSON.parse(localStorage.getItem('portfolio-projects') || JSON.stringify(defaultProjects));
-    const allProjects = [...(projects.featured || []), ...(projects.archive || [])];
+    const storedProjects = JSON.parse(localStorage.getItem('portfolio-projects') || JSON.stringify(defaultProjects));
+    const allProjects = [...(storedProjects.featured || []), ...(storedProjects.archive || [])];
     
     const tbody = document.getElementById('archive-projects');
     
-    projects
+    allProjects
       .sort((a, b) => b.year - a.year)
       .forEach(project => {
         const row = document.createElement('tr');

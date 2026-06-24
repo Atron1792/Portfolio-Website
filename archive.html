@@ -5,8 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Archive - Muhammad Abdullah</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="style.css?v=20260623" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     .archive-container {
       max-width: 1000px;
@@ -130,20 +131,27 @@
     }
   </style>
 </head>
+
 <body>
+  <!-- Fixed Navigation -->
   <nav class="navbar">
     <div class="nav-logo">
-      <a href="/">
-        <img src="/assets/logo.png" alt="MA Logo" class="logo-image" />
+      <a href="./">
+        <img src="/assets/logo.png" alt="MA Logo" class="logo-image" width="512" height="512" />
       </a>
     </div>
     <div class="nav-menu">
-      <a href="/#about" data-number="01.">About</a>
-      <a href="/#experience" data-number="02.">Experience</a>
-      <a href="/#projects" data-number="03.">Projects</a>
-      <a href="/#contact" data-number="04.">Contact</a>
+      <a href="./#about" data-number="01.">About</a>
+      <a href="./#experience" data-number="02.">Experience</a>
+      <a href="./#projects" data-number="03.">Projects</a>
+      <a href="./#contact" data-number="04.">Contact</a>
       <a href="archive.html" data-number="05.">Archive</a>
       <a href="/assets/resume.pdf" target="_blank" class="resume-link">Resume</a>
+    </div>
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </nav>
   
@@ -180,6 +188,7 @@
           title: 'Artifact of Myth, a CK3 Mod',
           description: '',
           tech: ['Jomini Script', 'Steam Workshop'],
+          github: 'https://github.com/Atron1792/AoM_CK3_Mod',
           external: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3481270592',
           year: 2025,
           type: 'featured',
@@ -250,6 +259,16 @@
           year: 2024,
           type: 'game',
           company: 'MRUHacks 2024'
+        },
+        {
+          id: 'winfolderlock',
+          title: 'WinFolderLock',
+          description: 'A UI based folder locking system for Windows 10/11.',
+          tech: ['C#', 'GitHub Copilot', 'Windows App'],
+          github: 'https://github.com/Atron1792/WinFolderLock',
+          year: 2026,
+          type: 'app',
+          company: 'Personal Project'
         }
       ]
     };

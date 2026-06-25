@@ -40,7 +40,7 @@
       <table class="archive-table">
         <thead>
           <tr>
-            <th>Year</th>
+            <th>Date</th>
             <th>Title</th>
             <th>Made for</th>
             <th>Built with</th>
@@ -56,39 +56,35 @@
   <script>
     // Default projects data
     const defaultProjects = {
-      featured: [
+      featured: [ 'aom-ck3', 'stress-heatmap', 'limbo-td'],
+      archive: [
         {
           id: 'aom-ck3',
           title: 'Artifact of Myth, a CK3 Mod',
-          description: '',
+          description: 'An independently developed, expansive Crusader Kings III mod that introduces mythological artifacts, lore-based decisions, and dynamic event chains, with continuous content updates to enrich gameplay.',
           tech: ['Jomini Script', 'Steam Workshop'],
           external: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3481270592',
-          year: 2025,
-          type: 'featured',
-          company: 'Personal Project'
+          date: 'May 2025',
+          purpose: 'Personal Project'
         },
         {
           id: 'caesar-cipher',
           title: 'Caesar Cipher',
-          description: 'A robust Caesar Cipher algorithm implementation in Python showcasing strong problem-solving and coding abilities.',
+          description: 'A robust Caesar Cipher implementation in Python that demonstrates strong problem-solving, modular programming, reusable code design, and comprehensive error handling for unexpected inputs.',
           tech: ['Python', 'Cryptography', 'Algorithm Design', 'Error Handling'],
-          year: 2023,
-          type: 'featured',
-          company: 'Academic Project'
+          date: 'January 2023',
+          purpose: 'Academic Project'
         },
         {
           id: 'limbo-td',
           title: 'LimboTD',
-          description: 'A 2D survival tower defense game that won 2nd place in a 24-hour hackathon.',
+          description: 'A 2D survival tower defense game that won 2nd place in a 24-hour hackathon, demonstrating rapid prototyping, teamwork, time management, and strong learning ability through building engaging mechanics in Godot.',
           tech: ['Godot', 'GDScript', 'Game Design', 'Team Collaboration'],
           github: 'https://github.com/Atron1792/LimboLTD_CalgaryHacks2024',
           external: 'https://mrugddc.itch.io/limbo-ltd',
-          year: 2024,
-          type: 'featured',
-          company: 'CalgaryHacks 2024'
-        }
-      ],
-      archive: [
+          date: 'Feburary 2024',
+          purpose: 'CalgaryHacks 2024'
+        },
         {
           id: 'wolflings-pack',
           title: 'Wolflings: Peril of the Pack',
@@ -96,9 +92,8 @@
           tech: ['Godot', 'GDScript', 'Game Design'],
           github: 'https://github.com/TechPowerAwaits/calgaryhacks-2025',
           external: 'https://atron1792.itch.io/wolflings-peril-of-the-pack',
-          year: 2025,
-          type: 'game',
-          company: 'CalgaryHacks 2025'
+          date: 'May 2025',
+          purpose: 'CalgaryHacks 2025'
         },
         {
           id: 'change-to-scale',
@@ -107,9 +102,8 @@
           tech: ['Godot', 'GDScript', 'Platformer'],
           github: 'https://github.com/Atron1792/Change-to-Scale_GMTK-2024',
           external: 'https://atron1792.itch.io/change-to-scale',
-          year: 2024,
-          type: 'game',
-          company: 'GMTK Game Jam 2024'
+          date: 'August 2024',
+          purpose: 'GMTK Game Jam 2024'
         },
         {
           id: 'combat-harvest',
@@ -118,29 +112,28 @@
           tech: ['Godot', 'GDScript', 'Action'],
           github: 'https://github.com/Atron1792/combat-harvest',
           external: 'https://karszo.itch.io/combat-harvest',
-          year: 2024,
-          type: 'game',
-          company: 'Propel Alberta Game Jam'
+          date: '2024',
+          purpose: 'Propel Alberta Game Jam'
         },
         {
           id: 'winter-express',
           title: 'Winter Express',
           description: 'A strategic management game that fosters critical thinking by challenging players to optimize resource allocation and strategic decision-making.',
           tech: ['Godot', 'GDScript', 'Game Development', 'Team Leadership'],
-          github: 'https://github.com/Atron1792/winter-express',
+          github: 'https://github.com/Atron1792/MRUHacks2024',
           external: 'https://atron1792.itch.io/winter-express',
-          year: 2024,
-          type: 'game',
-          company: 'MRUHacks 2024'
+          date: 'October 2024',
+          purpose: 'MRUHacks 2024'
         },
         {
           id: 'website',
           title: 'Portfolio Website',
           description: 'My personal portfolio website to showcase my projects and skills.',
           tech: ['HTML', 'CSS', 'JavaScript'],
-          year: 2025,
-          type: 'website',
-          company: 'Personal Project'
+          github: 'https://github.com/Atron1792/Portfolio-Website',
+          external: 'https://www.mabdu.ca/',
+          date: 'November 2025',
+          purpose: 'Personal Project'
         },
         {
           id: 'winfolderlock',
@@ -148,9 +141,17 @@
           description: 'A UI based folder locking system for Windows 10/11.',
           tech: ['C#', 'GitHub Copilot', 'Windows App'],
           github: 'https://github.com/Atron1792/WinFolderLock',
-          year: 2026,
-          type: 'app',
-          company: 'Personal Project'
+          date: 'June 2026',
+          purpose: 'Personal Project'
+        },
+        {
+          id: 'stress-heatmap',
+          title: 'MRU Student Stress Heatmap',
+          description: 'A app which reads student input then connects to machine learning and sends that readout to a web map for administrative use.',
+          tech: ['JaveScript', 'Python', 'Kotlin', 'Machine Learning', 'SQL'],
+          github: 'https://github.com/goose121/stress-heatmap',
+          date: 'April 2026',
+          purpose: 'Academic Project'
         }
       ]
     };
@@ -162,15 +163,15 @@
     const tbody = document.getElementById('archive-projects');
     
     allProjects
-      .sort((a, b) => b.year - a.year)
+      .sort((a, b) => b.date - a.date)
       .forEach(project => {
         const row = document.createElement('tr');
         row.innerHTML = `
-          <td class="project-year u-mono u-meta-sm">${project.year}</td>
+          <td class="project-date u-mono u-meta-sm">${project.date}</td>
           <td>
             <div class="project-title">${project.title}</div>
           </td>
-          <td class="project-company">${project.company}</td>
+          <td class="project-purpose">${project.purpose}</td>
           <td class="project-tech u-mono u-meta-xs">${project.tech ? project.tech.join(' • ') : ''}</td>
           <td>
             <div class="project-links u-icon-links">
